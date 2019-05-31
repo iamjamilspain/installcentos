@@ -5,15 +5,15 @@
 ## Default variables to use
 export INTERACTIVE=${INTERACTIVE:="true"}
 export PVS=${INTERACTIVE:="true"}
-export DOMAIN=${DOMAIN:="$(curl -s ipinfo.io/ip).nip.io"}
+export DOMAIN=${DOMAIN:="jamilspain.cloud"}
 export USERNAME=${USERNAME:="$(whoami)"}
 export PASSWORD=${PASSWORD:=password}
 export VERSION=${VERSION:="3.11"}
 export SCRIPT_REPO=${SCRIPT_REPO:="https://raw.githubusercontent.com/gshipley/installcentos/master"}
 export IP=${IP:="$(ip route get 8.8.8.8 | awk '{print $NF; exit}')"}
 export API_PORT=${API_PORT:="8443"}
-export LETSENCRYPT=${LETSENCRYPT:="false"}
-export MAIL=${MAIL:="example@email.com"}
+export LETSENCRYPT=${LETSENCRYPT:="true"}
+export MAIL=${MAIL:="ithinkrs@gmail.com"}
 
 ## Make the script interactive to set the variables
 if [ "$INTERACTIVE" = "true" ]; then
