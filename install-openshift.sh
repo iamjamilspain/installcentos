@@ -86,12 +86,16 @@ yum update -y
 
 # install the following base packages
 yum install -y  wget git zile nano net-tools docker-1.13.1\
-				bind-utils iptables-services \
-				bridge-utils bash-completion \
+				bind-utils nmap tree iptables-services \
+				bridge-utils vim bash-completion \
 				kexec-tools sos psacct openssl-devel \
 				httpd-tools NetworkManager \
 				python-cryptography python2-pip python-devel  python-passlib \
 				java-1.8.0-openjdk-headless "@Development Tools"
+
+#
+# 
+#
 
 #install epel
 yum -y install epel-release
@@ -144,6 +148,17 @@ if [ ! -f ~/.ssh/id_rsa ]; then
 	cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 	ssh -o StrictHostKeyChecking=no root@$IP "pwd" < /dev/null
 fi
+
+# Checking to see if Networking Config Manager script is there not to modify
+if [ ! -f ~/.ssh/id_rsa ]; then
+	ssh-keygen -q -f ~/.ssh/id_rsa -N ""
+	cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+	ssh -o StrictHostKeyChecking=no root@$IP "pwd" < /dev/null
+fi
+#
+# NM_CONTROLLED="no"
+# BOOTPROTO="none"
+# PEERDNS="no"
 
 export METRICS="True"
 export LOGGING="True"
