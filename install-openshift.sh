@@ -105,8 +105,8 @@ sed -i -e "s/^enabled=1/enabled=0/" /etc/yum.repos.d/epel.repo
 
 systemctl | grep "NetworkManager.*running" 
 if [ $? -eq 1 ]; then
-	systemctl start NetworkManager
-	systemctl enable NetworkManager
+	#systemctl start NetworkManager
+	#systemctl enable NetworkManager
 fi
 
 # install the packages for Ansible
@@ -246,7 +246,7 @@ if [ "$PVS" = "true" ]; then
 
 	curl -o vol.yaml $SCRIPT_REPO/vol.yaml
 
-	for i in `seq 1 200`;
+	for i in `seq 1 100`;
 	do
 		DIRNAME="vol$i"
 		mkdir -p /mnt/data/$DIRNAME 
