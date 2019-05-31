@@ -105,8 +105,8 @@ sed -i -e "s/^enabled=1/enabled=0/" /etc/yum.repos.d/epel.repo
 
 systemctl | grep "NetworkManager.*running" 
 if [ $? -eq 1 ]; then
-	#systemctl start NetworkManager
-	#systemctl enable NetworkManager
+	# systemctl start NetworkManager
+	 systemctl enable NetworkManager
 fi
 
 # install the packages for Ansible
